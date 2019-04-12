@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Translator API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
     <input type="text" id="textInput" placeholder="Type your text here">
-    <select></select>
-    <button id="button"></button>
+    <select id="source">
+        <option value="0" disabled selected>Choose a language to translate from</option>
+    </select>
+    <select id="target">
+        <option value="0" disabled selected>Choose a language to translate into</option>
+    </select>
+    <button id="button">Go</button>
     <p id="output"></p>
 </body>
 </html>
