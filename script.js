@@ -7,10 +7,17 @@ $(document).ready(function(){
     });
 });
 
-$("#button").click(function(){
+function createSelects(result){
+    for (var i in result.langs){
+        var option = document.createElement("option");
+        option.value = i;
+        option.innerHTML = result.langs[i];
+        $("select").append(option);
+    }
+}
+
+function translate(){
     var text = $("#textInput").val();
-    console.log($("#source").val());
-    console.log($("#target").val());
     var lang = $("#source").val() + "-" + $("#target").val();
     $.ajax({
         url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190410T205210Z.9361e13ac5785266.c7' +
@@ -20,13 +27,4 @@ $("#button").click(function(){
             $("#output").html(result);
         }
     });
-});
-
-function createSelects(result){
-    for (var i in result.langs){
-        var option = document.createElement("option");
-        $(option).val(i);
-        $(option).html(result.langs[i]);
-        $("select").append(option);
-    }
 }
