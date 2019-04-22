@@ -16,7 +16,7 @@ function createSelects(result){
     }
 }
 
-function translate(){
+function translateIt(){
     var text = $("#textInput").val();
     var lang = $("#source").val() + "-" + $("#target").val();
     $.ajax({
@@ -24,7 +24,19 @@ function translate(){
         '61d9002a2bc9c5fbc3d5849d8b0eda0f5e305e&text=' + text + '&lang=' + lang,
         type: 'POST',
         success: function(result){
-            $("#output").html(result);
+            $("#translationOutput").html(result.text);
+        }
+    });
+}
+
+function detector(){
+    var text = $("#needsDetecting").val();
+    $.ajax({
+        url: 'https://translate.yandex.net/api/v1.5/tr.json/detect?key=trnsl.1.1.20190410T205210Z.9361e13ac5785266.c761d' +
+        '9002a2bc9c5fbc3d5849d8b0eda0f5e305e&text=' + text,
+        type: 'POST',
+        success: function(result){
+            console.log(result.lang);
         }
     });
 }

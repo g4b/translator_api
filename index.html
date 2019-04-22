@@ -5,17 +5,32 @@
     <title>Translator API</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-    <input type="text" id="textInput" placeholder="Type your text here">
-    <select id="source">
-        <option value="0" disabled selected>Choose a language to translate from</option>
-    </select>
-    <select id="target">
-        <option value="0" disabled selected>Choose a language to translate into</option>
-    </select>
-    <button id="button" onclick="translate()">Go</button>
-    <p id="output"></p>
+    <h1>Gabe's Magic translator</h1>
+    <table>
+        <tr>
+            <td>
+            <input type="text" id="textInput" class="form-control" placeholder="Type your text here">
+            <select class="form-control" id="source">
+                <option value="0" disabled selected>Choose a language to translate from</option>
+            </select>
+            <select class="form-control" id="target">
+                <option value="0" disabled selected>Choose a language to translate into</option>
+            </select>
+            <button id="translator" onclick="translateIt()">Go</button>
+            <p id="translationOutput"></p>
+            <p id="yandexMessage">Powered by <a href="http://translate.yandex.com/">Yandex Translate</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="needsDetecting" class="form-control" placeholder="Type your text here">
+                <button id="detector">Go</button>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
