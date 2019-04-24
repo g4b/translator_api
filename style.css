@@ -1,0 +1,15 @@
+body {
+    background-image: url("https://images.all-free-download.com/images/graphicthumb/simple_lace_art_background_vector_574305.jpg");
+}
+
+h1, p {
+    text-align: center;
+}
+
+button, table {
+    margin: auto;
+}
+
+select {
+    display: inline;
+}

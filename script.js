@@ -1,3 +1,5 @@
+var FULL_NAME_LANGS;
+
 $(document).ready(function(){
     $.ajax({
         url: "https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=trnsl.1.1.20190410T205210Z.9361e13ac5785266.c7" +
@@ -14,6 +16,7 @@ function createSelects(result){
         option.innerHTML = result.langs[i];
         $("select").append(option);
     }
+    FULL_NAME_LANGS = result.langs;
 }
 
 function translateIt(){
@@ -29,14 +32,14 @@ function translateIt(){
     });
 }
 
-function detector(){
+function langDetector(){
     var text = $("#needsDetecting").val();
     $.ajax({
         url: 'https://translate.yandex.net/api/v1.5/tr.json/detect?key=trnsl.1.1.20190410T205210Z.9361e13ac5785266.c761d' +
         '9002a2bc9c5fbc3d5849d8b0eda0f5e305e&text=' + text,
         type: 'POST',
         success: function(result){
-            console.log(result.lang);
+            $("#langOutput").html(FULL_NAME_LANGS[result.lang]);
         }
     });
 }
