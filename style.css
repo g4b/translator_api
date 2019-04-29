@@ -1,5 +1,12 @@
 body {
-    background-image: url("https://images.all-free-download.com/images/graphicthumb/simple_lace_art_background_vector_574305.jpg");
+    background-image: url("https://www.yliving.com/blog/wp-content/uploads/2015/11/herman-miller-desktop-download-free.jpg");
+}
+
+h1 {
+    margin: auto;
+    width: 35%;
+    background-color: ghostwhite;
+    font-family: "Bookman Old Style";
 }
 
 h1, p {
@@ -8,8 +15,4 @@ h1, p {
 
 button, table {
     margin: auto;
-}
-
-select {
-    display: inline;
 }

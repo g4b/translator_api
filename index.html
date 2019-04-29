@@ -9,25 +9,25 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-    <h1>Gabe's Magic translator</h1>
+    <h1>Gabe's Magic Translator</h1><br>
     <table>
         <tr>
             <td>
             <input type="text" id="textInput" class="form-control" placeholder="Type your text here">
-            <select class="form-control" id="source">
+            <span><select class="form-control" id="source">
                 <option value="0" disabled selected>Choose a language to translate from</option>
             </select>
             <select class="form-control" id="target">
                 <option value="0" disabled selected>Choose a language to translate into</option>
-            </select>
+            </select></span>
             <button id="translator" onclick="translateIt()">Go</button>
             <p id="translationOutput"></p>
             </td>
         </tr>
         <tr>
             <td>
-                <input type="text" id="needsDetecting" class="form-control" placeholder="Type your text here">
-                <button onclick="langDetector()">Go</button>
+                <span><input type="text" id="needsDetecting" class="form-control" placeholder="Type your text here">
+                    <button onclick="langDetector()">Go</button></span>
                 <p id="langOutput"></p>
             </td>
         </tr>

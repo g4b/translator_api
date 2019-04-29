@@ -39,7 +39,11 @@ function langDetector(){
         '9002a2bc9c5fbc3d5849d8b0eda0f5e305e&text=' + text,
         type: 'POST',
         success: function(result){
-            $("#langOutput").html(FULL_NAME_LANGS[result.lang]);
+            $("#langOutput").html("This language is " + FULL_NAME_LANGS[result.lang]);
+        },
+        error: function () {
+            alert("Sorry, we are unable to detect that language.");
         }
     });
 }
+
