@@ -47,3 +47,9 @@ function langDetector(){
     });
 }
 
+function swapSelects(){
+    var lang1 = $("#source").val();
+    var lang2 = $("#target").val();
+    $("#source").val(lang2);
+    $("#target").val(lang1);
+}

@@ -6,11 +6,11 @@ h1 {
     margin: auto;
     width: 35%;
     background-color: ghostwhite;
-    font-family: "Bookman Old Style";
 }
 
-h1, p {
+h1, p, th {
     text-align: center;
+    font-family: "Bookman Old Style";
 }
 
 button, table {
