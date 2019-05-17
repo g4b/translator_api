@@ -43,12 +43,14 @@ function translateIt(){
 function langDetector(){
     var text = $("#needsDetecting").val();
     if (text === "") {
+        alert("No text has been inputted. Please enter text into the box and try again.");
+    } else {
         $.ajax({
             url: 'https://translate.yandex.net/api/v1.5/tr.json/detect?key=trnsl.1.1.20190410T205210Z.9361e13ac5785266.c761d' +
             '9002a2bc9c5fbc3d5849d8b0eda0f5e305e&text=' + text,
             type: 'POST',
             success: function (result) {
-                $("#langOutput").html("This language is " + FULL_NAME_LANGS[result.lang]);
+                $("#langOutput").html("The language is: " + FULL_NAME_LANGS[result.lang]);
             },
             error: function () {
                 alert("Sorry, we are unable to detect that language.");
@@ -58,7 +60,6 @@ function langDetector(){
 }
 
 function swapSelects(){
-    $("#textInput").val("");
     var lang1 = $("#source").val();
     var lang2 = $("#target").val();
     $("#source").val(lang2);
@@ -66,5 +67,5 @@ function swapSelects(){
 }
 
 function paste(){
-    $("#textInput").val($("#translationOutput").html());
+    $("#textInput").val($("#translationOutput").html())
 }
